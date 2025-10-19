@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "lambda_build":"esbuild src/index.mjs --outfile=dist/index.mjs"
+  },
+  "dependencies": {
+    "esbuild": "^0.25.11"
+  }
+}
