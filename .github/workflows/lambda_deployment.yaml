@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Build Script
-        run: npm run build_lambda
+        run: npm run lambda_build
 
 
       - name: Install zip tool
