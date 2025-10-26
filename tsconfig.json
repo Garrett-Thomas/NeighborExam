@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // 1. Specifies the output JavaScript version
+    "target": "es2020", 
+
+    // 2. Specifies the libraries available for TypeScript to use/recognize
+    // 'dom' is for browser globals, 'es2020' includes modern JS types (fixes WeakSet, ReadonlySet errors)
+    // 'dom' is optional if you're strictly Node.js, but often helpful.
+    "lib": ["es2020"], 
+
+    // 3. Tells TypeScript to recognize Node.js specific global types and modules (fixes 'node:stream' error)
+    "types": ["node"], 
+    
+    // Other common serverless/Node.js settings:
+    "module": "commonjs", 
+    "moduleResolution": "node",
+    
+    "noEmit":true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"]
+}

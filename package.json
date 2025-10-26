@@ -1,8 +1,18 @@
 {
   "scripts": {
-    "lambda_build":"esbuild src/index.mjs --outfile=dist/index.mjs"
+    "lambda_build": "npm run type_check && esbuild src/index.ts --outfile=dist/index.mjs",
+    "type_check": "tsc --noEmit src/index.ts",
+    "test": "vitest"
   },
   "dependencies": {
-    "esbuild": "^0.25.11"
+    "esbuild": "^0.25.11",
+    "ts-combinatorics": "^1.0.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.156",
+    "@types/node": "^24.8.1",
+    "@vitest/ui": "^3.2.4",
+    "vitest": "^3.2.4"
   }
 }
