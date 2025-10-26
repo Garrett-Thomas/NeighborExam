@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "lambda_build": "npm run type_check && esbuild src/index.ts --outfile=dist/index.mjs",
-    "type_check": "tsc --noEmit src/index.ts",
+    "lambda_build": "npm run type_check && esbuild src/index.ts --bundle --outfile=dist/index.mjs",
+    "type_check": "tsc",
     "test": "vitest"
   },
   "dependencies": {
