@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lambda_build": "npm run type_check && esbuild src/index.ts --bundle --outfile=dist/index.mjs",
+    "lambda_build": "npm run type_check && esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs",
     "type_check": "tsc",
     "test": "vitest"
   },

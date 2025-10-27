@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  neighbor
+Transform:
+  - AWS::Serverless-2016-10-31
+
+# Resources declares the AWS resources that you want to include in the stack
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
+Resources:
+  # Each Lambda function is defined by properties:
+  # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+
+  # This is a Lambda function config associated with the source code: hello-from-lambda.js
+  FindLocationsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs22.x
+      CodeUri: dist/
+      Architectures:
+        - arm64
+      MemorySize: 128
+      Timeout: 100
+      Description: Function that returns all possible locations that can fit the cars
+      Events:
+        FindLocations:
+          Type: Api
+          Properties:
+            Path: /
+            Method: Post
+Globals:
+  Function:
+    Tracing: Active
+  Api:
+    TracingEnabled: true
